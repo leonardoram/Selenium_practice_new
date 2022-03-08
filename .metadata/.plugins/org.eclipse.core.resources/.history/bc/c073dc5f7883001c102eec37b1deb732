@@ -1,0 +1,42 @@
+package com.testingPractice;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class TestingPractice {
+	
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.gecko.driver", "/Users/leonardoramirez/Desktop/selenium/geckodriver");
+
+		//invocar al demonio, digo al explorador jejeje 
+		String url = "https://google.com" ;
+		FirefoxDriver firefox = new FirefoxDriver();
+		
+		firefox.get(url);
+		
+		String titulo = firefox.getTitle();
+		
+		WebElement buscarInput = firefox.findElement(By.xpath("//input[@type='text']"));
+		WebElement buscarButton = firefox.findElement(By.xpath("//div[@class='FPdoLc lJ9FBc']//center//input[@value='Buscar con Google']"));
+		
+		//Actions act =new Actions(firefox);
+	
+		
+		buscarInput.sendKeys("leoxenon");
+		
+		//act.moveToElement(buscarButton).click().perform();
+		
+		buscarButton.click();
+		
+		firefox.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		firefox.quit();
+		
+	}
+
+}

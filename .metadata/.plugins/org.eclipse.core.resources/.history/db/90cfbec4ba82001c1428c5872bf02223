@@ -1,0 +1,18 @@
+package com.testingPractice;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class TestingPractice {
+	
+
+	public static void main(String[] args) {
+
+		//invocar al demonio, digo al explorador jejee 
+		ChromeDriver chrome = new ChromeDriver();
+		FirefoxDriver firefox = new FirefoxDriver();
+		
+		
+	}
+
+}
